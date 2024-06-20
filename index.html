@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript</title>
+    <style>
+      div {
+        min-height: 100px;
+        min-width: 100px;
+        padding: 24px;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JAVASCRIPT</h1>
+    <ol>
+      <li>HOISTING</li>
+      <li>CALL BIND AND APPLY</li>
+      <li>DEBOUNCING <input type="text" onkeyup="callDebounceMethod()" /></li>
+      <li>Async and Defer attributes</li>
+      <li>Event Bubbling and Capturing aka Trickling</li>
+    </ol>
+    <!-- * Example for event bubbling and event capturing -->
+    <div id="grandParentDiv">
+      Example for Event Bubbling and Event Capturing/Trickling
+      <div id="parentDiv">
+        <div id="childDiv"></div>
+      </div>
+    </div>
+    <!-- * Example for event delegation -->
+    <ul id="categories">
+      <li id="shoes">shoes</li>
+      <li id="laptops">laptops</li>
+      <li id="cameras">cameras</li>
+    </ul>
+    <div id="form">
+      <input id="input1" type="text" data-uppercase />
+      <input id="input2" type="text" />
+      <input id="input3" type="text" data-uppercase />
+    </div>
+    <!-- <script src="./hoisting.js"></script>
+    <script src="./call_bind_apply.js"></script>
+    <script src="./function_currying.js"></script>
+    <script src="./debouncing.js"></script>
+    <script src="./throttling.js"></script>
+    <script src="./event_bubbling_and_capturing.js"></script>
+    <script src="./web_storage.js"></script>
+    <script src="./event_delegation.js"></script>
+    <script src="./functions.js"></script> 
+    <script src="./Scope.js"></script> -->
+    <script src="./Memoization.js"></script>
+  </body>
+</html>
+
+<!-- * Async and Defer attributes which are used in script tags :- -->
+
+<!-- * Normally, using script tags <script src="./some.js"></script> -->
+<!-- * This does HTML parsing initally goes on and as soon as the script tag is encountered,  -->
+<!-- * script tags are fetched from the network, there and then they are executed. After that, -->
+<!-- * HTML parsing continues -->
+
+<!-- * HTML parsing                        :- |--------------------|                  |------------|  -->
+<!-- * Fetching scripts and it's execution :-                      |+++++++++|********|                -->
+
+<!-- * =============== ASYNC ATTRIBUTE ========================================================== -->
+
+<!-- * When we are using script tag with async attribute, <script async src="./some.js"></script> -->
+<!-- * With async attribute, the HTML parsing goes on and the scripts are fetched from network -->
+<!-- * in async manner and parallely. As soon as, scripts are available. Scripts are executed -->
+<!-- * After that, HTML parsing continues                                                     -->
+
+<!-- * HTML parsing                        :- |--------------------|        |------------|            -->
+<!-- * Fetching scripts and it's execution :-            |+++++++++|********|                          -->
+
+<!-- * =============== DEFER ATTRIBUTE ========================================================== -->
+
+<!-- * When we are using script tag with defer attribute, <script defer src="./some.js"></script> -->
+<!-- * With async attribute, the HTML parsing goes on and the scripts are fetched from network -->
+<!-- * in parallel and executed only once HTML parsing is completed -->
+
+<!-- * HTML parsing                        :- |--------------------------------------|               -->
+<!-- * Fetching scripts and it's execution :-            |+++++++++|                 |*******|       -->
+
+<!-- *  "-" indicates HTML Parsing                       -->
+<!-- *  "*" indicates fetching scripts from network      -->
+<!-- *  "-" indicates execution of scripts               -->
+
+<!-- * ========== ASYNC V/S DEFER ================================================================== -->
+
+<!-- * if you are using async attribute on script tags which are dependent. Here, our code may break    -->
+<!-- * Because, Async attribute does not guarantee the execution of scripts. But, defer does            -->
+<!-- * In this case, you should prefer defer attribute.                                                 -->
+<!-- * Another example is, if you want to load some external scripts which are independent of our code. -->
+<!-- * In that case, prefer async attribute over defer attribute.                                       -->
+<!-- * It's prefer to use defer attribute. Because, it maintains the order of execution.                -->
