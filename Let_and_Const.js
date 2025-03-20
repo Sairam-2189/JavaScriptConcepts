@@ -3,7 +3,7 @@
 // * These are in temporal dead zone for time-being.
 // * Let and const declarations gives "reference error". if, you are trying to access before it is initalised.
 
-// * console.log(b); -----> 100
+// * console.log(b); -----> undefined
 // * console.log(a); -----> reference error.
 
 let a = 10;
